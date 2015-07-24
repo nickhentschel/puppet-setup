@@ -3,7 +3,7 @@ class profiles::base {
   users { 'common': }
 
   # sshd config
-  include profiles::ssh::server
+  # include profiles::ssh::server
 
   # base firewall config
   include profiles::firewall::setup
