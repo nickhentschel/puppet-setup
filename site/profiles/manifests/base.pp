@@ -9,7 +9,7 @@ class profiles::base {
   include profiles::firewall::setup
 
   # common packages needed everywhere
-  package {[ 'vim', 'sudo', 'tmux', 'git' ]:
+  package {[ 'vim', 'sudo', 'tmux', 'git', 'htop' ]:
     ensure => latest,
   }
 
