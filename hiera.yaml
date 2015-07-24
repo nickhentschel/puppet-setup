@@ -4,4 +4,4 @@
   :datadir: /etc/puppet/environments/%{environment}/hiera
 :hierarchy:
   - "nodes/%{::fqdn}"
-  - base
+  - common
