@@ -11,7 +11,11 @@ class ntp {
   }
 
   file { '/etc/ntp.conf':
-    ensure => 'present',
-    source => 'puppet:///modules/ntp/ntp.conf',
+    ensure  => 'present',
+    source  => 'puppet:///modules/ntp/ntp.conf',
+    owner   => 'root',
+    group   => 'root',
+    replace => 'true',
+    mode    => '0644',
   }
 }
