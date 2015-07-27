@@ -10,9 +10,11 @@ class ntp {
     enable => 'true',
   }
 
+  $ntp_servers = hiera_array('ntp::servers')
+
   file { '/etc/ntp.conf':
     ensure  => 'present',
-    source  => 'puppet:///modules/ntp/ntp.conf',
+    content => template('ntp/ntp.conf.erb'),
     owner   => 'root',
     group   => 'root',
     replace => 'true',
