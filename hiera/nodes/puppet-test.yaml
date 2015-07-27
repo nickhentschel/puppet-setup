@@ -1,4 +1,0 @@
----
-environment: master
-classes:
-  - roles::default
