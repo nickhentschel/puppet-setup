@@ -1,0 +1,4 @@
+# /etc/puppet/hiera/common.yaml
+---
+roles:
+  - role::default
