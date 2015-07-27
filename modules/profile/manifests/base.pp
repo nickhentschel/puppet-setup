@@ -7,7 +7,7 @@ class profile::base {
     comment    => 'Nicholas Hentschel',
     uid        => 1000,
     managehome => 'true',
-    groups     => 'wheel',
+    groups     => ['wheel', 'puppet'],
   }
 
   include ntp
