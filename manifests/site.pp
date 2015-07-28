@@ -1,2 +1,2 @@
-# hiera_include('roles')
-include role::default
+hiera_include('roles')
+# include role::default
