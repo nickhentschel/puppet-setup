@@ -2,11 +2,16 @@
 
 class profile::base {
 
+  $base_packages = hiera_array('base_packages')
+  package { $base_packages:
+    ensure => installed,
+  }
+
   user { 'nhentschel':
-    ensure     => 'present',
+    ensure     => present,
     comment    => 'Nicholas Hentschel',
     uid        => 1000,
-    managehome => 'true',
+    managehome => true,
     groups     => ['wheel', 'puppet'],
   }
 

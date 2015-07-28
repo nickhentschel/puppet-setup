@@ -2,8 +2,15 @@
 ---
 roles: role::default
 
-ntp::autoupdate: true
+base_packages:
+  - tmux
+  - vim-enhanced
+  - git
+  - zsh
+  - htop
+
 ntp::enable: true
+ntp::ensure: running
 ntp::servers:
   - 0.us.pool.ntp.org iburst
   - 1.us.pool.ntp.org iburst
