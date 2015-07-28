@@ -1,6 +1,6 @@
 # /etc/puppet/hiera/common.yaml
 ---
-roles: role::default
+roles: role::webserver
 
 base_packages:
   - tmux
@@ -12,7 +12,19 @@ base_packages:
 ntp::enable: true
 ntp::ensure: running
 ntp::servers:
-  - 0.us.pool.ntp.org iburst
-  - 1.us.pool.ntp.org iburst
-  - 2.us.pool.ntp.org iburst
-  - 3.us.pool.ntp.org iburst
+  - nist1-ny.glassey.com iburst
+  - bonehed.lcs.mit.edu iburst
+
+users_base:
+  nhentschel:
+    ensure: present
+    uid: 1000
+    groups:
+      - wheel
+      - puppet
+    comment: Nick Hentschel
+    managehome: true
+    ssh_authorized_keys:
+      work_mac_mini:
+        type: 'ssh-rsa'
+        key: 'AAAAB3NzaC1yc2EAAAADAQABAAACAQC/YFFrOht0uSlYlC6Gk+DDYIlgJXc34RT7m8ltlf9ea+xw0zbMcPXAYQ8Q8BoV+Ss+RKfWTUC36o3df80iZad3o3ALX3aFhof+rfS/EqNO05r42QFIUcZQAyj68KChXXPhLoFqm5BIRSjc7lJ7zk83zfOSpcsi8PDl/1vPGSIKSbMXAxU6nULJc0SEltxxEYoJfV76RxDR7LlmmTxiAXKWNZ5/LZ52GGoywxuDFjEP6qWXmB5JTLkshinwv/ochC5CkgkB2YbpON9tQA+a8OMDoLeeoe4hEXOhEvC7JtEeSZYHmxYfZmP8y5uHdyJImtP5sJe1EP/L1eXuofnFvEg6NS8Vpr855LUXC9uLNX1oBb3n7zJ4a1dsEoChS5P0vShf/d/mB34Xejt21vnk+Bu/zjfdfUYQrZttGcyLOaYakw9SvFf2p/8mIszvMnsij8G+FKSb2C+ysFj87HLw0wuCrRRHBbyytVBj30vQ/lfIUITB1e4uYSn3tF2yn6kJqanHErkiINpZ3ThOs7cm4BNhxnzfiQ/BiHlSPm3BR+u5+DM/bnSVw5j89nwyqiAhkAZWTg0WSrjoRwBdmtIde3l6zY9d6s7WBAZZfjdv+l9LUdGLFawPRyhgKfpc31VVCtfimgyS5k/OqIp07wXCv1QHkNzVK5qZbVy19YlB1K5atQ=='

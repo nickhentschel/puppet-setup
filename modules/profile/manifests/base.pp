@@ -7,13 +7,6 @@ class profile::base {
     ensure => installed,
   }
 
-  user { 'nhentschel':
-    ensure     => present,
-    comment    => 'Nicholas Hentschel',
-    uid        => 1000,
-    managehome => true,
-    groups     => ['wheel', 'puppet'],
-  }
-
+  users { base: }
   include ntp
 }
