@@ -1,10 +1,9 @@
 # /etc/puppet/modules/nginx/manifests/service.pp
 
-class nginx::service($ensure, $enable, $hasrestart) {
+class nginx::service {
   service { 'nginx':
-    ensure     => $ensure,
-    enable     => $enable,
-    hasrestart => $hasrestart,
-    require    => Package['nginx']
+    ensure     => $nginx::service_status,
+    enable     => $nginx::service_enable,
+    hasrestart => $nginx::hasrestart,
   }
 }

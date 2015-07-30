@@ -9,9 +9,10 @@ base_packages:
   - zsh
   - htop
 
-nginx::service::enable: true
-nginx::service::ensure: running
-nginx::service::hasrestart: true
+nginx::repo_enable: true
+nginx::service_status: running
+nginx::service_enable: true
+nginx::hasrestart: true
 
 ntp::enable: true
 ntp::ensure: running
