@@ -15,7 +15,7 @@ class jekyll::install {
     require  => Package['rubygems', 'ruby'],
   }
 
-  package { "kramdown":
+  package { 'kramdown':
     ensure   => present,
     provider => 'gem',
     require  => Package['jekyll'],
