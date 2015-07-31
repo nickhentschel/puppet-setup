@@ -12,7 +12,7 @@ class jekyll::install {
   package {'jekyll':
     ensure   => latest,
     provider => 'gem',
-    require  => Package['rubygems', 'ruby', 'build-essential'],
+    require  => Package['rubygems', 'ruby'],
   }
 
   package { "kramdown":
