@@ -1,4 +1,4 @@
-# /etc/puppet/modules/phpfpm/manifests/init.pp
+# /etc/puppet/modules/phpfpm/manifests/install.pp
 
 class phpfpm::install(
   $phpfpm_version = 'installed'

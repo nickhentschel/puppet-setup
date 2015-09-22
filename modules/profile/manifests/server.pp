@@ -8,5 +8,5 @@ class profile::server {
     hasrestart     => hiera('nginx::hasrestart'),
   }
   class{ '::jekyll': }
-  class{ '::php-fpm': }
+  class{ '::phpfpm': }
 }
