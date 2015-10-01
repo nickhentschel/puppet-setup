@@ -8,6 +8,7 @@ base_packages:
   - git
   - zsh
   - htop
+  - sqlite
 
 nginx::repo_enable: true
 nginx::service_status: running
