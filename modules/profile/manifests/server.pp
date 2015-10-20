@@ -7,6 +7,10 @@ class profile::server {
     service_status => hiera('nginx::service_status'),
     hasrestart     => hiera('nginx::hasrestart'),
   }
-  class{ '::jekyll': }
-  class{ '::phpfpm': }
+  # class{ '::jekyll': }
+  class{ '::php':
+    php_version        => hiera('php::version'),
+    php_prefix         => hiera('php::prefix'),
+    php_service_prefix => hiera('php::service_prefix'),
+  }
 }

@@ -21,6 +21,10 @@ ntp::servers:
   - nist1-ny.glassey.com iburst
   - bonehed.lcs.mit.edu iburst
 
+php::version: installed
+php::prefix: php56w
+php::service_prefix: php
+
 users_base:
   nhentschel:
     ensure: present
